@@ -1,0 +1,7 @@
+package com.ayushi.authservice.entity;
+
+public class LoginDetails {
+
+	private String username;
+	private String password;
+}

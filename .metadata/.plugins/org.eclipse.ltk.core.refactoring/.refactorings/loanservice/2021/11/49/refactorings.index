@@ -1,0 +1,16 @@
+1638125860745	Delete element
+1638125933661	Rename package 'com.ayushi.authservice.restclients'
+1638125942137	Rename package 'com.ayushi.authservice.entity'
+1638125947055	Delete element
+1638126069472	Encapsulate field 'username'
+1638126478177	Encapsulate field 'loanstatus'
+1638127256192	Delete element
+1638129862305	Delete element
+1638129865247	Delete element
+1638129872223	Delete element
+1638173395844	Rename package 'com.ayushi.authservice.config'
+1638173404443	Rename package 'com.ayushi.authservice.filters'
+1638173411822	Rename package 'com.ayushi.authservice.services'
+1638173421500	Rename package 'com.ayushi.authservice.util'
+1638173429250	Rename package 'com.ayushi.authservice.models'
+1638178852152	Copy packages

@@ -1,0 +1,47 @@
+package com.ayushi.profileservice.entity;
+
+public class Profile {
+
+	private String password;
+	private String email;
+	private long contactno;
+	private String customername;
+
+	public String getCustomername() {
+		return customername;
+	}
+
+	public void setCustomername(String customername) {
+		this.customername = customername;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public long getContactno() {
+		return contactno;
+	}
+
+	public void setContactno(long contactno) {
+		this.contactno = contactno;
+	}
+
+	@Override
+	public String toString() {
+		return "Profile [customername=" + customername + ", username=" + username + ", password=" + password
+				+ ", email=" + email + ", contactno=" + contactno + "]";
+	}
+}

@@ -1,0 +1,6 @@
+package com.ayushi.authservice.models;
+
+public class AuthenticationResponse {
+
+	private final String jwt;
+}

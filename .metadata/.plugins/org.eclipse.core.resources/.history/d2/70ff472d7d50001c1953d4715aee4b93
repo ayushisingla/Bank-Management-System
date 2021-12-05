@@ -1,0 +1,5 @@
+package com.ayushi.authservice.restclients;
+
+public interface CustomerClient {
+
+}

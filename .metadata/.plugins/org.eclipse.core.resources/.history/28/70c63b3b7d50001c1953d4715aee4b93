@@ -1,0 +1,12 @@
+package com.ayushi.authservice.restclients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient("GATEWAY-SERVICE")
+public interface CustomerClient {
+
+	 @GetMapping(value = "/authapi/{accountNo}") 
+	 Customer profileupdate(@PathVariable("accountNo") int accountNo); }
+}

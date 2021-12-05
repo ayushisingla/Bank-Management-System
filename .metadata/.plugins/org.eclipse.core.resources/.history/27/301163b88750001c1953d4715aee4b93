@@ -1,0 +1,58 @@
+package com.ayushi.loanservice.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.ayushi.loanservice.entity.Customer;
+import com.ayushi.loanservice.entity.Loan;
+import com.ayushi.loanservice.repos.CustomerRepo;
+import com.ayushi.loanservice.repos.LoanRepo;
+
+@RestController
+@RequestMapping("/loanapi")
+public class LoanController {
+
+	@Autowired
+	LoanRepo loanRepo;
+
+	@Autowired
+	CustomerRepo customerRepo;
+
+	@RequestMapping(value = "/applyloan", method = RequestMethod.POST)
+	public String createLoan(@RequestBody Loan loan) {
+		System.out.println("Apply Loan method executed with data: " + loan);
+		
+		
+		// check if username exists
+		List<Customer> customer = customerRepo.findByUsername(loan.getUsername());
+		if (customer.size() == 0) {
+			//user not exists
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Please enter correct details");
+		} else {
+			// check if user requested for loan application before?
+			if (!loan.getLoanstatus()) {
+				loanRepo.save(loan);
+				loan.setLoanstatus(true);
+				System.out.println("Loan status: " + loan.getLoanstatus());
+				return "Loan applied";
+			} else {
+				return "Loan already applied";
+			}
+		}
+
+	}
+
+	@RequestMapping(value = "/loan/{username}", method = RequestMethod.GET)
+	public Loan getLoanDetails(@PathVariable("username") String username) {
+		System.out.println("Loan Get Method------>" + loanRepo.findByUsername(username));
+		return loanRepo.findByUsername(username);
+	}
+}

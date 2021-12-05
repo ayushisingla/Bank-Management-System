@@ -1,0 +1,10 @@
+package com.ayushi.profileservice.entity;
+
+public class Profile {
+
+	private String customername;
+	private String username;
+	private String password;
+	private String email;
+	private long contactno;
+}

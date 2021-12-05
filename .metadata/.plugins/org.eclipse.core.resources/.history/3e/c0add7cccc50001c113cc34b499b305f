@@ -1,0 +1,5 @@
+package com.ayushi.authservice.util;
+
+public class jwtUtil {
+
+}

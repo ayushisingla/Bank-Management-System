@@ -1,0 +1,38 @@
+package com.ayushi.profileservice.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ayushi.profileservice.entity.Customer;
+import com.ayushi.profileservice.repos.CustomerRepo;
+
+@RestController
+@RequestMapping("/profileapi")
+public class ProfileController {
+
+	@Autowired
+	CustomerRepo repo;
+
+	Customer customer;
+
+	@RequestMapping(value = "/viewProfile/{userId}", method = RequestMethod.GET)
+	public Customer viewProfile(@PathVariable("accountNo") String userId) {
+		System.out.println("view method executed");
+		Customer customer = repo.findByAccountNo(accountNo);
+		System.out.println(customer);
+		return customer;
+	}
+
+	@RequestMapping(value = "/updateProfile", method = RequestMethod.PUT)
+	public Customer profileupdate(@RequestBody Customer customer) {
+		System.out.println("update method executed");
+		repo.findByAccountNo(customer.getAccountNo());
+		repo.save(customer);
+		return customer;
+	}
+
+}

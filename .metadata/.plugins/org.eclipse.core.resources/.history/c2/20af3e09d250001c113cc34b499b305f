@@ -1,0 +1,5 @@
+package com.ayushi.authservice.models;
+
+public class AuthenticationRequest {
+
+}

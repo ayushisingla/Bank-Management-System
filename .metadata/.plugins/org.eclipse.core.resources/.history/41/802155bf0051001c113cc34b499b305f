@@ -1,0 +1,30 @@
+package com.ayushi.authservice.services;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.ayushi.authservice.entity.Customer;
+import com.ayushi.authservice.repos.CustomerRepo;
+
+@Service
+public class MyUserDetailsService implements UserDetailsService {
+
+	@Autowired
+	CustomerRepo repo;
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+		Customer cust = repo.findByUsername(username);
+
+		System.out.println("loadByusername method executed");
+		return new User("foo", "foo", new ArrayList<>());
+	}
+
+}

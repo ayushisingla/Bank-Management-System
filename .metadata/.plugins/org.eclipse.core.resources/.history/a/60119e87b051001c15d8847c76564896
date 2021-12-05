@@ -1,0 +1,5 @@
+package com.ayushi.loanservice.exception;
+
+public class DuplicateLoanRecordsFound extends Exception {
+
+}
