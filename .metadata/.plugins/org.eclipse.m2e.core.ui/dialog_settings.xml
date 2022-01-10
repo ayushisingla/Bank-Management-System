@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Bank-Management-System\accounts"/>
+			<item value="D:\CTS\Bank Management System\Microservices"/>
 			<item value="D:\CTS\Bank Management System\configserver"/>
 			<item value="C:\Users\Ayushi Singla\Downloads\spring-boot-jwt-without-JPA"/>
 			<item value="C:\Users\Ayushi Singla\Downloads\springsecsection3"/>

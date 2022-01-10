@@ -1,8 +1,0 @@
-package com.ayushi.authservice.models;
-
-public class AuthenticationRequest {
-
-	private String username;
-	private String password;
-}
-

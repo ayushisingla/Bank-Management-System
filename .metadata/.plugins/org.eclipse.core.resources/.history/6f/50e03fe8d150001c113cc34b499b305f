@@ -1,5 +1,0 @@
-package com.ayushi.authservice.models;
-
-public class AuthenticationResponse {
-
-}
